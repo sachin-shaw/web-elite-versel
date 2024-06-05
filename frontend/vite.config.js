@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api/": "https://web-elite-versel-lh40wwgxe-sachin-shaws-projects.vercel.app/",
+      "/api/": "https://web-elite-versel.vercel.app/",
     },
   },
 });
