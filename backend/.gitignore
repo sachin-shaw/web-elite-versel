@@ -4,7 +4,7 @@
 # Environment variables
 *.env*
 !.env.example
-/config
+config.env
 
 # Logs
 /logs
