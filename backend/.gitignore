@@ -1,9 +1,6 @@
 # Dependencies
 /node_modules
 
-# Build/Production
-/client/build
-
 # Environment variables
 *.env*
 !.env.example

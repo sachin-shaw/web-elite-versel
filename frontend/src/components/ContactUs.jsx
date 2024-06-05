@@ -11,14 +11,11 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        `${import.meta.env.VITE_APP_URI_API}/api/v1/auth/contactus`,
-        {
-          name,
-          email,
-          message,
-        }
-      );
+      const res = await axios.post("/api/v1/auth/contactus", {
+        name,
+        email,
+        message,
+      });
       if (res && res.data.success) {
         toast.success(res.data && res.data.message);
         // Handle success, e.g., show a success message to the user

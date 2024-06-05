@@ -5,7 +5,7 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/authRoute.js";
 import cors from "cors";
-import path from "path";
+//import path from "path";
 
 //configure env
 dotenv.config({ path: "./config/config.env" });
@@ -21,16 +21,16 @@ app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
 
-const __dirname = path.resolve();
+//const __dirname = path.resolve();
 
 //routes
 app.use("/api/v1/auth", authRoutes);
 
-app.use(express.static(path.join(__dirname, "/client/dist")));
+//app.use(express.static(path.join(__dirname, "../client/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
+// });
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome</h1>");
