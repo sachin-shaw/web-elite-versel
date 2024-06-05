@@ -2,10 +2,10 @@
   "name": "webelitelab",
   "version": "1.0.0",
   "description": "This repository contains a MERN (MongoDB, Express, React, Node) stack project that demonstrates how to connect a front-end React application to a back-end Node/Express API. It can serve as a boilerplate project for a MERN stack application, providing a solid foundation for building scalable and maintainable applications. \r The project is based on the following tutorial I wrote: [Setting up a Full Stack React & Node.js Project: A Comprehensive Cheat Sheet.](https://medium.com/@obrm770/setting-up-a-full-stack-react-node-js-project-a-comprehensive-cheat-sheet-ee326576c21a)",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "start": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "cd backend && nodemon server.js",
+    "server": "cd backend && nodemon index.js",
     "client": "cd frontend && npm run dev"
   },
   "author": "",
