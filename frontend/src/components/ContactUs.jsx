@@ -13,7 +13,7 @@ const ContactUs = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(""https://web-elite-versel-1.onrender.com/api/v1/auth/contactus", {
+      const res = await axios.post("https://web-elite-versel-1.onrender.com/api/v1/auth/contactus", {
         name,
         email,
         message,
