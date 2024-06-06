@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const ContactUs = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,10 +31,21 @@ const ContactUs = () => {
     }
   };
 
+  const handleClose = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
+
   return (
     <div className="bg-green min-h-screen flex items-center justify-center px-4 py-8">
       <div className="max-w-md bg-white shadow w-full mx-auto flex items-center justify-center my-20">
-        <div className="mb-5">
+        <div className="mb-5 relative">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={handleClose}
+          >
+            ✕
+          </button>
           <form className="card-body" onSubmit={handleSubmit}>
             <h3 className="font-bold text-lg text-green">Contact Us</h3>
 
@@ -88,13 +101,6 @@ const ContactUs = () => {
                 value="Send Message"
               />
             </div>
-
-            {/* close btn (redirect to home) */}
-            <a href="/">
-              <div className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </div>
-            </a>
           </form>
         </div>
       </div>
