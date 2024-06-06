@@ -20,7 +20,7 @@ const app = express();
 //app.use(cors());
 app.use(
   cors({
-    origin: ["https://web-elite-versel.vercel.app/"],
+    origin: ["https://web-elite-versel-8wfv.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
