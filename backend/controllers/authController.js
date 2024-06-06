@@ -274,6 +274,7 @@ export const contactUsController = async (req, res) => {
     });
   } catch (error) {
     console.error(error);
+    console.log(error);
     res.status(500).send({
       success: false,
       message: "Error in processing contact us information",
