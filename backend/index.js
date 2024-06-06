@@ -19,27 +19,21 @@ const app = express();
 //middelwares
 //app.use(cors());
 
-app.use(cors({
-  origin: 'https://web-elite-versel-8wfv.vercel.app',
-  methods: ['POST', 'GET'],
-  credentials: true
-}));
+app.use(
+  cors({
+    origin: "https://web-elite-versel-8wfv.vercel.app",
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
-app.options('*', cors());
+app.options("*", cors());
 
 app.use(express.json());
 app.use(morgan("dev"));
 
-//const __dirname = path.resolve();
-
 //routes
 app.use("/api/v1/auth", authRoutes);
-
-//app.use(express.static(path.join(__dirname, "../client/dist")));
-
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));
-// });
 
 app.get("/", (req, res) => {
   res.send("<h1>Welcome</h1>");
