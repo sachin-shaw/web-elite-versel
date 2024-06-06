@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
 
@@ -8,7 +8,15 @@ const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  // Example usage in your code
+
+  const redirectLogin = () => {
+    navigate("/login");
+  };
+
+  const handleClose = (e) => {
+    e.preventDefault();
+    navigate("/");
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +27,7 @@ const Signup = () => {
         password,
       });
       if (res && res.data.success) {
-        toast.success(res.data && res.data.message);
+        toast.success(res.data.message);
         navigate("/login");
       } else {
         toast.error(res.data.message);
@@ -29,10 +37,17 @@ const Signup = () => {
       toast.error("Something went wrong");
     }
   };
+
   return (
     <div className="bg-green min-h-screen flex items-center justify-center px-4 py-8">
       <div className="max-w-md bg-white shadow w-full mx-auto flex items-center justify-center my-20">
-        <div className="mb-5">
+        <div className="mb-5 relative">
+          <button
+            className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+            onClick={handleClose}
+          >
+            ✕
+          </button>
           <form className="card-body" onSubmit={handleSubmit}>
             <h3 className="font-bold text-lg text-green">
               Please Create An Account!
@@ -44,7 +59,7 @@ const Signup = () => {
                 <span className="label-text text-green">Name</span>
               </label>
               <input
-                type="name"
+                type="text"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 placeholder="Your name"
@@ -92,20 +107,14 @@ const Signup = () => {
               />
             </div>
 
-            {/* close btn */}
-            <Link to="/">
-              <div className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">
-                ✕
-              </div>
-            </Link>
-
             <div className="text-center my-2 text-green">
               Have an account?
-              <Link to="/login">
-                <button className="ml-2 underline text-green">
-                  Login here
-                </button>
-              </Link>
+              <button
+                onClick={redirectLogin}
+                className="ml-2 underline text-green"
+              >
+                Login here
+              </button>
             </div>
           </form>
         </div>
