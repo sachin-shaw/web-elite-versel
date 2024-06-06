@@ -20,8 +20,9 @@ const app = express();
 //app.use(cors());
 
 app.use(cors({
-  origin: "https://web-elite-versel-8wfv.vercel.app", // Replace with your frontend URL
-  optionsSuccessStatus: 200
+  origin: 'https://web-elite-versel-8wfv.vercel.app',
+  methods: ['POST', 'GET'],
+  credentials: true
 }));
 
 app.use(express.json());
