@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     element: <Signup />,
   },
   {
-    path: "https://web-elite-versel-8wfv.vercel.app/login",
+    path: "/login",
     element: <Login />,
   },
   {
