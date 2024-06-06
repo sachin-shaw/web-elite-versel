@@ -13,6 +13,11 @@ const Navbar = () => {
   const [isSticky, setIsSticky] = useState(false);
   const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
+
+  const redirectLogin = () => {
+    navigate("/login");
+  };
+
   const handleLogout = () => {
     setAuth({
       ...auth,
@@ -95,22 +100,21 @@ const Navbar = () => {
           {/* btn for large devices */}
           {!auth.user ? (
             <div className="space-x-12 hidden lg:flex items-center">
-              <a
-                href="/login"
+              <button
                 className="btn flex items-center gap-2 rounded-full px-6 bg-green text-white"
+                onClick={redirectLogin}
               >
                 Login
-              </a>
+              </button>
             </div>
           ) : (
             <div className="space-x-12 hidden lg:flex items-center">
-              <a
+              <button
                 onClick={handleLogout}
-                href="/"
                 className="btn flex items-center gap-2 rounded-full px-6 bg-green text-white"
               >
                 Logout
-              </a>
+              </button>
             </div>
           )}
 
@@ -135,23 +139,21 @@ const Navbar = () => {
             >
               {/* Include login button in mobile menu */}
               {!auth.user ? (
-                <a
-                  href="/login"
+                <button
+                  onClick={(redirectLogin, closeMenu)}
                   className="block text-base text-gray-900 hover:text-brandPrimary
                           first:fornt-medium"
-                  onClick={closeMenu}
                 >
                   Login
-                </a>
+                </button>
               ) : (
-                <a
+                <button
                   onClick={(handleLogout, closeMenu)}
-                  href="/"
                   className="block text-base text-gray-900 hover:text-brandPrimary
                           first:fornt-medium"
                 >
                   Logout
-                </a>
+                </button>
               )}
 
               {/* Additional menu items for mobile devices */}
