@@ -19,15 +19,13 @@ const app = express();
 //middelwares
 //app.use(cors());
 
-app.use(
-  cors({
-    origin: "*",
-    methods: ["POST", "GET", "PUT"],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: 'https://web-elite-versel-8wfv.vercel.app', // Vercel frontend URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
+}));
 
-app.options("*", cors());
+// app.options("*", cors());
 
 app.use(express.json());
 app.use(morgan("dev"));
