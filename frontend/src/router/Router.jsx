@@ -17,31 +17,31 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
       },
+      {
+        path: "/signup",
+        element: <Signup />,
+      },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+      {
+        path: "/forgot-password",
+        element: <ForgotPassword />,
+      },
+      {
+        path: "/reset-password/:id/:token",
+        element: <ResetPassword />,
+      },
+      {
+        path: "/success-page",
+        element: <SuccessPage />,
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs />,
+      },
     ],
-  },
-  {
-    path: "/signup",
-    element: <Signup />,
-  },
-  {
-    path: "/login",
-    element: <Login />,
-  },
-  {
-    path: "/forgot-password",
-    element: <ForgotPassword />,
-  },
-  {
-    path: "/reset-password/:id/:token",
-    element: <ResetPassword />,
-  },
-  {
-    path: "/success-page",
-    element: <SuccessPage />,
-  },
-  {
-    path: "/contactus",
-    element: <ContactUs />,
   },
 ]);
 
