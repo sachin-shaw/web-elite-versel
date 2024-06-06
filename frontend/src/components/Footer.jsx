@@ -37,7 +37,7 @@ const Footer = () => {
           <div className="w-full md:w-1/2 lg:w-1/4 mb-8 md:mb-0">
             <header className="text-lg font-semibold mb-4">Contact Us</header>
             <a className="block mb-2">sidhujugraj0001@gmail.com</a>
-            <a className="block mb-2">7889028101</a>
+            <a className="block mb-2">+91 7889028101</a>
             <a className="block mb-2">Social media</a>
           </div>
         </div>
