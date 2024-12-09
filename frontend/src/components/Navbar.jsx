@@ -140,7 +140,7 @@ const Navbar = () => {
               {/* Include login button in mobile menu */}
               {!auth.user ? (
                 <button
-                  onClick={(redirectLogin, closeMenu)}
+                  onClick={redirectLogin}
                   className="block text-base text-gray-900 hover:text-brandPrimary
                           first:fornt-medium"
                 >
@@ -148,7 +148,7 @@ const Navbar = () => {
                 </button>
               ) : (
                 <button
-                  onClick={(handleLogout, closeMenu)}
+                  onClick={handleLogout}
                   className="block text-base text-gray-900 hover:text-brandPrimary
                           first:fornt-medium"
                 >
