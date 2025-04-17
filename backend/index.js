@@ -20,7 +20,7 @@ const app = express();
 //app.use(cors());
 
 app.use(cors({
-  origin: 'https://webelitelab.com', // Vercel frontend URL
+  origin: 'https://web-elite-versel-8wfv.vercel.app', // Vercel frontend URL
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
